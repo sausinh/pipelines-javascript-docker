@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sausinhpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sausinhpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: sausinhpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: sausinhpipelinesjavascriptdocker 
+          image: mycontainerregistrysaurabh.azurecr.io/sausinhpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
